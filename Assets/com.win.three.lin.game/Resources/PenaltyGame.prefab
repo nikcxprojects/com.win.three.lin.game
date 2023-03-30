@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 5447058251023163897}
   - component: {fileID: 1589882218885311231}
   m_Layer: 0
-  m_Name: penalty
+  m_Name: PenaltyGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
