@@ -4,8 +4,8 @@ using Random = UnityEngine.Random;
 
 public class Ball : MonoBehaviour
 {
-    private Vector2 InitScale { get; set; } = Vector3.one * 0.08922569f;
-    private Vector2 TargetScale { get; set; } = Vector3.one * 0.05888896f;
+    private Vector2 InitScale { get; set; } = Vector3.one;
+    private Vector2 TargetScale { get; set; } = Vector3.one * 0.4176936f;
 
     private Transform Center { get; set; }
 
@@ -42,6 +42,7 @@ public class Ball : MonoBehaviour
         Vector2 direction = target.transform.position - transform.position;
 
         Rigidbody.AddForce(direction.normalized * force, ForceMode2D.Impulse);
+        Rigidbody.AddTorque(100);
         Invoke(nameof(ResetMe), 2.5f);
 
         OnPressed?.Invoke(target);
@@ -83,7 +84,7 @@ public class Ball : MonoBehaviour
         Rigidbody.velocity = Vector2.zero;
         Rigidbody.angularVelocity = 0;
 
-        transform.position = new Vector2(-1.4f, -3.68f);
+        transform.position = new Vector2(0, -4.27f);
         Rigidbody.Sleep();
     }
 }
